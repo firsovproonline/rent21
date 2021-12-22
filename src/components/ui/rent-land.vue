@@ -20,6 +20,16 @@
           :parent_ob="this.setObvalue"
           label=''>
       </rent-select>
+      <table style="margin-top: 12px;" >
+        <tr>
+          <td><input @click="RadioClick" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="owned" v-bind:checked="getChRadio('owned')"></td>
+          <td style="white-space:nowrap;padding-left:6px;">В собственности</td>
+          <td><input @click="RadioClick" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="rent" v-bind:checked="getChRadio('rent')"></td>
+          <td style="white-space:nowrap;padding-left:6px;">В аренде</td>
+        </tr>
+      </table>
+
+
     </div>
   </div>
 </template>
@@ -48,7 +58,7 @@ export default {
       land:{
         Area: 0,
         AreaUnitType: "hectare",
-        Type: ""
+        Type: "owned"
       }
     }
   },
@@ -58,6 +68,23 @@ export default {
       setOb:'rent/setObField'
 
     }),
+    RadioClick(ev) {
+      this.land.Type = ev.target.value
+      this.setOb({
+        ob:this.field_ob,
+        field:this.field_,
+        value:JSON.stringify(this.land)})
+    },
+    getChRadio(val) {
+      if(this.land.Type == val)
+      {
+          return true;
+      }
+      else {
+        return null;
+      }
+    },
+
     setObvalue:function (field,val){
       this.land[field] = val;
       this.setOb({
@@ -90,7 +117,7 @@ export default {
         J = {
           Area: 0,
           AreaUnitType: "sotka",
-          Type: ""
+          Type: "owned"
         }
         this.setOb({
           ob:this.field_ob,
@@ -127,7 +154,7 @@ export default {
     text-align: left;
   }
 
-  input{
+  input[type="text"]{
     height: 31px;
     padding-right: 4px;
     padding-left: 4px;
@@ -135,5 +162,9 @@ export default {
     margin-top: 12px;
     margin-right: 8px;
 
+  }
+
+  .itemsSelect{
+    flex-wrap: unset;
   }
 </style>

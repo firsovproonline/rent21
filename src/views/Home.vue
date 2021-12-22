@@ -155,7 +155,19 @@
       >
 
       </rent-land>
-
+      <rent-select
+          v-bind:items="[
+            {value:'operational',label:'Действующее'},
+            {value:'project',label:'Проект'},
+            {value:'underConstruction',label:'Строящееся'},
+          ]"
+          field_="StatusType"
+          tip_="list"
+          width_label="170px"
+          v-bind:value="_test.BUILDS[this.indexbuild].StatusType"
+          v-bind:field_ob="_test.BUILDS[this.indexbuild]"
+          label='Категория'>
+      </rent-select>
     </div>
     <rent-save></rent-save>
 
