@@ -73,6 +73,7 @@ export const rentModule = {
         ],
         "ob21": [
             {
+                "TIPN":"Коммерческая",
                 "SOBST": "db0ca8d7-515a-48d5-cb4e-30ba6911a9b0",
                 "UID": "72558193-487d-4690-f9a5-a77b2dd2d828",
                 "ARHIV": "1",
