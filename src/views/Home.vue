@@ -168,6 +168,11 @@
           v-bind:field_ob="_test.BUILDS[this.indexbuild]"
           label='Категория'>
       </rent-select>
+      <div>
+        <RentVentilationType>
+
+        </RentVentilationType>
+      </div>
     </div>
     <rent-save></rent-save>
 
@@ -183,6 +188,7 @@ import RentInput from "@/components/ui/rent-input";
 import store from "@/store";
 import RentSave from "@/components/ui/rent-save";
 import RentLand from "@/components/ui/rent-land";
+import RentVentilationType from "@/components/ui/rent-VentilationType";
 export default {
   name: 'Home',
   data() {
@@ -195,6 +201,7 @@ export default {
     }
   },
   components: {
+    RentVentilationType,
     RentLand,
     RentSave,
     RentSelect,

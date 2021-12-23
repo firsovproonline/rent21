@@ -205,11 +205,14 @@ export default {
     width: 31px;
     height: 31px;
     background: none;
-    background-image: url("img/arrow-down.png");
+    background-image: url("img/down.png");
     margin-left: -32px;
-    background-size: 100% 100%;
+    background-size: 26px 26px;
+    background-repeat: no-repeat;
+    background-position-x: 2px;
+    background-position-y: 3px;
     cursor: pointer;
     border: none;
-
+    border-left: 1px solid;
   }
 </style>
