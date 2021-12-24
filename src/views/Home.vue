@@ -169,7 +169,11 @@
           label='Категория'>
       </rent-select>
       <div>
-        <RentVentilationType>
+        <RentVentilationType
+            field_="VentilationType"
+            v-bind:value="_test.BUILDS[this.indexbuild].VentilationType"
+            v-bind:field_ob="_test.BUILDS[this.indexbuild]"
+        >
 
         </RentVentilationType>
       </div>
