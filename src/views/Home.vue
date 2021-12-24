@@ -168,14 +168,19 @@
           v-bind:field_ob="_test.BUILDS[this.indexbuild]"
           label='Категория'>
       </rent-select>
-      <div>
+
+      <div style="margin-top: 12px; display: flex;justify-content: space-around;">
         <RentVentilationType
             field_="VentilationType"
             v-bind:value="_test.BUILDS[this.indexbuild].VentilationType"
             v-bind:field_ob="_test.BUILDS[this.indexbuild]"
-        >
+        ></RentVentilationType>
 
-        </RentVentilationType>
+        <RentConditioningType
+            field_="ConditioningType"
+            v-bind:value="_test.BUILDS[this.indexbuild].ConditioningType"
+            v-bind:field_ob="_test.BUILDS[this.indexbuild]"
+        ></RentConditioningType>
       </div>
     </div>
     <rent-save></rent-save>
@@ -193,6 +198,7 @@ import store from "@/store";
 import RentSave from "@/components/ui/rent-save";
 import RentLand from "@/components/ui/rent-land";
 import RentVentilationType from "@/components/ui/rent-VentilationType";
+import RentConditioningType from "@/components/ui/rent-ConditioningType";
 export default {
   name: 'Home',
   data() {
@@ -205,6 +211,7 @@ export default {
     }
   },
   components: {
+    RentConditioningType,
     RentVentilationType,
     RentLand,
     RentSave,
