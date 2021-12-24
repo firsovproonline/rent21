@@ -239,6 +239,7 @@ export default {
 }
 </script>
 <style scoped>
+
  .infoSectionHeader {
   background: url('~@/assets/htop.png') repeat-x;
   padding: 4px;

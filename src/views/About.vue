@@ -25,7 +25,11 @@ export default {
   },
   mounted() {
     //console.log(this.$store)
+    //@import "~materialize-css/dist/css/materialize.min.css";
   }
 
 }
 </script>
+<style scoped>
+
+</style>
